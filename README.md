@@ -44,6 +44,8 @@
 
 A dance floor that will simulate the lighting coming from the floor, from a set of spotlights and from a disco globe attached to the ceiling. The dance floor will be surrounded by walls and in the center there will be some geometric shapes that will move randomly and represent the dancers.
 
+![Dance floor](https://github.com/AndraCristiana07/Disco-Party/blob/main/images/1.png?raw=true)
+
 * **Lighting coming from the dance floor** :
 The floor of the dance floor consists of a grid of 8×8 cells, where each cell has a randomly chosen color. The illumination emitted by a single cell is simulated by using a point light source located in the center of the cell. The geometry of a cell is drawn with only the emissive component, without taking into account the other components of the light source used to approximate the illumination emitted by the cell. The emissive component has the same color as the light source associated with the cell.
 
@@ -51,10 +53,15 @@ In order not to include all the light sources on the dance floor in the calculat
 
 In order to be able to calculate the lighting coming from several light sources, all these sources are sent to the shader (position, color). The final illuminance is the sum of the illuminance of each individual light source.
 
+
+![Spotlights](https://github.com/AndraCristiana07/Disco-Party/blob/main/images/2.png?raw=true)
+
 * **Lighting from spotlights** :
 To improve the visual effect, the light area of ​​the spotlights are simulated by drawing a transparent cone over the lighting direction of the spotlight.
 
 To obtain the light cone, the geometry of a cone must be generated. For simplicity, the geometry of the cone is similar to that of a circular disc of radius 1, centered at position (0, -1, 0) and created in the XOZ plane. The only change from the circle disk is that the vertex at the center of the disk is at the origin of the coordinate system.
+
+![Disco globe](https://github.com/AndraCristiana07/Disco-Party/blob/main/images/3.png?raw=true)
 
 * **Lighting from a disco globe** :
 The lighting of the disco c is simulated with a point light source for which the color will be obtained from a texture.
